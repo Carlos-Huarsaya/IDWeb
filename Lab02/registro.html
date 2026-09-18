@@ -26,4 +26,19 @@
 
             </div>
         </fieldset> 
+        <fieldset>
+            <legend>Información de la Cuenta</legend>
+            <div class="form-group">
+                <label for="email" class="form-label">Correo Institucional:</label> 
+                <input type="email" id="email" name="email" class="form-input" required placeholder="usuario@universidad.edu.pe"> 
+
+                <label for="contraseña" class ="form-label">Contraseña</label>
+                <input type="password" id="contraseña" name="contraseña" class="form-input" required placeholder="Abcdefg1" pattern="^(?=.*[A-Z])(?=.*\d)[A-Za-z\d\W_]{8,}$">   
+            
+                
+                <label for="codigo" class="form-label">Codigo del estudiante</label>
+                <input type="text" id="codigo" name="codigo" class="form-input" required pattern="[0-9]{8}">
+            </div>
+        </fieldset>
+    </form>
 </body>
