@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Módulo de Registro para el Sistema de Gestión Académica </title>
+    <link><link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <form action="/procesar" method="POST" class="form-container"> 
+        <fieldset> 
+            <legend>Información Personal</legend> 
+            <div class="form-group"> 
+                <label for="nombre" class="form-label">Nombres y Apellidos</label> 
+                <input type="text" id="nombre" name="nombre" class="form-input" required placeholder="Carlos Manuel Huarsaya Vizcarra"> 
+                
+                <label for="telefono" class="form-label">Telefono</label>
+                <input type="tel" id="telefono" name="telefono" required placeholder="+51 999 999 999">
+                
+                <label for="dia" class="form-label">Fecha de Nacimiento</label>
+                <input type="date" id="dia" name="dia" required min="1990-01-01" max="2018-01-31">
+
+                <label for="mañana" class="form-label">Turno Mañana</label>
+                <input type="radio" id="manaña" name="turno" class="form-input" value="mañana" required><br>
+                <label for="tarde" class="form-label">Turno Tarde</label>
+                <input type="radio" id="tarde" name="turno" class="form-input" value="tarde" required>
+
+            </div>
+        </fieldset> 
+</body>
