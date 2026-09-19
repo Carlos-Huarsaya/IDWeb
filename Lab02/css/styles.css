@@ -1,8 +1,8 @@
 /* styles.css - Reseteo y Box Model */ *
 {     
     box-sizing: border-box;     
-    margin: 0;     
-    padding: 0; 
+    margin: 200;     
+    padding: 100; 
 }  
 body {     
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;     
@@ -17,10 +17,10 @@ body {
     display: block; 
     margin-bottom: 5px; 
     font-weight: bold; 
-    color: #333; 
+    color: #333;  
 } 
 .form-input { 
-    width: 100%; 
+    width: 90%; 
     padding: 10px 12px; 
     border: 1px solid #ccc; 
     border-radius: 4px; 
@@ -35,3 +35,11 @@ body {
 .form-input:invalid:touched { 
     border-color: #e53e3e; 
 } 
+.form-textarea{
+    width: 100%; 
+    padding: 10px 12px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    font-size: 14px; 
+    transition: border-color 0.3s; 
+}
