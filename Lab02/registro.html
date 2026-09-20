@@ -14,10 +14,10 @@
                 <input type="text" id="nombre" name="nombre" class="form-input" required placeholder="Carlos Manuel Huarsaya Vizcarra"> 
                 
                 <label for="telefono" class="form-label">Telefono</label>
-                <input type="tel" id="telefono" name="telefono" required placeholder="+51 999 999 999">
+                <input type="tel" id="telefono" name="telefono" class="form-input" required placeholder="+51 999 999 999">
                 
                 <label for="dia" class="form-label">Fecha de Nacimiento</label>
-                <input type="date" id="dia" name="dia" required min="1990-01-01" max="2018-01-31">
+                <input type="date" id="dia" name="dia" class="form-input" required min="1990-01-01" max="2018-01-31">
 
                 <label for="mañana" class="form-label">Turno Mañana</label>
                 <input type="radio" id="manaña" name="turno" class="form-input" value="mañana" required><br>
@@ -25,7 +25,7 @@
                 <input type="radio" id="tarde" name="turno" class="form-input" value="tarde" required>
 
             </div>
-        </fieldset> 
+        </fieldset><br>
         <fieldset>
             <legend>Información de la Cuenta</legend>
             <div class="form-group">
@@ -43,8 +43,8 @@
         <label for="comentarios" class="form-label">Comentarios</label>
         <textarea class="form-textarea" id="comentarios"></textarea>
         <label for="terminos" class="form-label">Acepta terminos y condiciones</label>
-        <input type="checkbox" class="form-input">
-        <button type="submit">Enviar</button>
+        <input type="checkbox" class="form-input"><br>
+        <button type="submit" class="form-input">Enviar</button>
     </form>
  
 

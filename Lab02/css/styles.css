@@ -1,17 +1,25 @@
 /* styles.css - Reseteo y Box Model */ *
 {     
     box-sizing: border-box;     
-    margin: 200;     
-    padding: 100; 
+    margin: auto;    
+    padding: auto; 
+    max-width: 100%;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }  
 body {     
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;     
     background-color: #f4f6f9;     padding: 20px; 
-}  
+} 
+form{
+    margin-left:-27px ;
+}
 .form-group {    
     margin-bottom: 15px;     
     width: 100%;     
-    max-width: 400px; 
+    max-width: 600px;
 }  
 .form-label { 
     display: block; 
@@ -20,7 +28,7 @@ body {
     color: #333;  
 } 
 .form-input { 
-    width: 90%; 
+    width: 90%;
     padding: 10px 12px; 
     border: 1px solid #ccc; 
     border-radius: 4px; 
@@ -42,4 +50,5 @@ body {
     border-radius: 4px; 
     font-size: 14px; 
     transition: border-color 0.3s; 
+
 }
