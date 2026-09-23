@@ -7,11 +7,22 @@
   <nav class="navbar">
 
     <a href="#" class="navbar-logo">Universidad Nacional de San Agustin</a>
+<input type="checkbox" id="menu-toggle" class="menu-toggle-checkbox">
+    <label class="navbar-toggle" for="menu-toggle"  aria-label="Abrir menú">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </label>
+    <ul class="navbar-menu">
+      <li class="navbar-item"><a href="#" class="navbar-link">Inicio</a></li>
+      <li class="navbar-item"><a href="#" class="navbar-link">Servicios</a></li>
+      <li class="navbar-item"><a href="#" class="navbar-link">Contacto</a></li>
+      <li class="navbar-item auth-buttons">
+        <a href="login.html" class="btn btn-login">Iniciar Sesión</a>
+        <a href="registro.html" class="btn btn-register">Registrarse</a>
+      </li>
+    </ul>
 
-    <button class="navbar-toggle" aria-label="Abrir menú">
-      <span class="hamburger"></span>
-    </button>
-    
 
   </nav>
 </header>
