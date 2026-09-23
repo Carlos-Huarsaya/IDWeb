@@ -29,7 +29,7 @@
   color: #333;
 }
 .navbar-menu {
-    display: none; /* Se oculta en pantallas pequeñas */
+    display: none;
     flex-direction: column;
     position: absolute;
     top: 100%;
@@ -46,6 +46,7 @@
   text-decoration: none;
   color: #555;
   transition: color 0.3s ease;
+  white-space: nowrap;
 }
 .navbar-item {
     text-align: center;
@@ -119,6 +120,13 @@
 .menu-toggle-checkbox:checked ~ .navbar-menu {
   display: flex;
 }
+.message{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
 
 @media (min-width: 768px) {     
     .tablet {         
@@ -134,6 +142,7 @@
         background-color: transparent;
         padding: 0;
         align-items: center;
+        gap: 3rem;
       }
 
       .navbar-item {
@@ -141,6 +150,7 @@
       }
 
       .auth-buttons {
+        display: flex;
         flex-direction: row;
         margin-top: 0;
         margin-left: 20px;
@@ -149,8 +159,10 @@
       .btn-register {
         margin-left: 10px;
       }
+      .message{
+            flex-direction: row;
+        }
     }  
-
 @media (min-width: 1024px) {     
     .desktop {         
         grid-template-columns: repeat(3, 1fr); /* Desktop */ } } 
