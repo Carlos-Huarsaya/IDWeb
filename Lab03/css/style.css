@@ -12,6 +12,10 @@
   display: flex;
   flex-direction: column;
 }
+.tarjeta h3 {
+  font-size: 1.1rem;
+  color: #701728; /* Guinda UNSA */
+}
 .header {
     position: sticky;
     top: 0;
