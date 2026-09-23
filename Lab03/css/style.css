@@ -130,6 +130,7 @@
         width: auto;
       }
     }  
+
 @media (min-width: 1024px) {     
     .desktop {         
         grid-template-columns: repeat(3, 1fr); /* Desktop */ } } 
