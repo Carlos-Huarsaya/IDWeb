@@ -63,7 +63,9 @@
     padding: 1.5rem 0;
     list-style: none;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: auto;
     margin-right: 5px ;
+    
 }
 
 .navbar-link {
@@ -195,4 +197,6 @@
 @media (min-width: 1024px) {     
     .contenedor {         
         grid-template-columns: repeat(autofit, minmax(250px, 1fr)); /* Desktop */ } } 
-
+    .navbar-item{
+      font-size: large;
+    }
