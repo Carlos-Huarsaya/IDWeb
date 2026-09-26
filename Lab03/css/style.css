@@ -3,22 +3,31 @@
     display: grid;
     grid-template-columns: 1fr; /* Mobile */     
     gap: 1rem; 
+    align-items: start;
 } 
 .tarjeta {
   background: #fff;
-  border: 1px solid #ddd;
+  border: 3px solid #ddd;
   border-radius: 8px;
   padding: 1rem;
   display: flex;
   flex-direction:column;
   justify-content: center;
+  align-items: center;
   gap: 1rem;
-  max-width: 500px;
-  margin-left: 100px;
+  max-width: 600px;
+  margin: auto;
+  height: 100%;
 }
 .tarjeta h3 {
   font-size: 1.5rem;
   color: #701728;
+}
+.tarjeta img {
+    display: block;         
+    margin: 0 auto;       
+    max-width: 100%;         
+    height: auto;          
 }
 .header {
     position: sticky;
@@ -29,13 +38,12 @@
 }
 
 .navbar {
-  display: flex;
+  display: none;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
   background-color: #ffffff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  position: relative;
 }
 
 .navbar-logo {
@@ -54,8 +62,8 @@
     background-color: #ffffff;
     padding: 1.5rem 0;
     list-style: none;
-    margin: 0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-right: 5px ;
 }
 
 .navbar-link {
@@ -88,7 +96,7 @@
     gap: 0.5rem;
     margin-top: 0.5rem;
 }
-.btn {
+.mi-btn {
     display: inline-flex;
     padding: 10px 20px;
     text-decoration: none;
@@ -99,24 +107,24 @@
     transition: background-color 0.3s;
 }
 
-.btn-login {
+.mi-btn-login {
     color: #007bff;
     border: 2px solid #007bff;
     background-color: transparent;
 }
 
-.btn-login:hover {
+.mi-btn-login:hover {
     background-color: #007bff;
     color: white;
 }
 
-.btn-register {
+.mi-btn-register {
     color: white;
     background-color: #28a745;
     border: 2px solid #28a745;
 }
 
-.btn-register:hover {
+.mi-btn-register:hover {
     background-color: #218838;
 }
 .menu-toggle-checkbox {
@@ -140,10 +148,13 @@
     gap: 20px;
     padding: 20px;
     position: static;
-    justify-content: center;
+    justify-content: space-between;
+    width: 100%;
+    text-align: center;
+    margin: 0;
 }
 
-@media (min-width: 768px) {     
+@media (min-width: 870px) {     
     .contenedor {         
         grid-template-columns: repeat(2, 1fr);/* Tablet */     }
     .navbar-toggle {
@@ -177,6 +188,9 @@
       .message{
             flex-direction: row;
         }
+      .navbar-logo{
+        padding-left: 50px;
+      }
     }  
 @media (min-width: 1024px) {     
     .contenedor {         
