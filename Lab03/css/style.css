@@ -2,7 +2,7 @@
 .contenedor {     
     display: grid;
     grid-template-columns: 1fr; /* Mobile */     
-    gap: 1.5rem; 
+    gap: 1rem; 
 } 
 .tarjeta {
   background: #fff;
@@ -10,11 +10,15 @@
   border-radius: 8px;
   padding: 1rem;
   display: flex;
-  flex-direction: column;
+  flex-direction:column;
+  justify-content: center;
+  gap: 1rem;
+  max-width: 500px;
+  margin-left: 100px;
 }
 .tarjeta h3 {
-  font-size: 1.1rem;
-  color: #701728; /* Guinda UNSA */
+  font-size: 1.5rem;
+  color: #701728;
 }
 .header {
     position: sticky;
@@ -64,12 +68,9 @@
     text-align: center;
     margin: 0.5rem 0;
 }
-
 .navbar-link:hover {
   color: #007bff;
 }
-
-
 .navbar-toggle {
     display: flex;
     flex-direction: column;
