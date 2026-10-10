@@ -50,9 +50,9 @@ function renderizar() {
 
   lista.innerHTML = tareasFiltradas.map(t => `
     <li class="${t.completada ? 'completada' : ''}">
-      <input type="checkbox" ${t.completada ? 'checked' : ''} onclick="alternarEstado(${t.id})">
+      <input type="checkbox" ${t.completada ? 'checked' : ''} onclick="alternarEstado('${t.id}')">
       <span><strong>${t.titulo}</strong> (${t.curso}) - Entrega: ${t.fechaEntrega}</span>
-      <button onclick="eliminarTarea(${t.id})">Eliminar</button>
+      <button onclick="eliminarTarea('${t.id}')">Eliminar</button>
     </li>
   `).join('');
 }
@@ -62,18 +62,18 @@ function guardarYRenderizar() {
   renderizar();
 }
 
-function alternarEstado(id) {
+window.alternarEstado=function(id) {
   const tarea = tareas.find(t => t.id === Number(id));
   if (tarea) tarea.completada = !tarea.completada;
   guardarYRenderizar();
 }
 
-function eliminarTarea(id) {
+window.eliminarTarea=function(id) {
   tareas = tareas.filter(t => t.id !== Number(id));
   guardarYRenderizar();
 }
 
-function cambiarFiltro(filtro) {
+window.cambiarFiltro=function(filtro) {
   filtroActual = filtro;
   renderizar();
 }
