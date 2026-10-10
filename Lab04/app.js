@@ -38,3 +38,21 @@ form.addEventListener('submit', (e) => {
   guardarYRenderizar();
   form.reset();
 });
+
+function renderizar() {
+  lista.innerHTML = '';
+
+  const tareasFiltradas = tareas.filter(t => {
+    if (filtroActual === 'pendientes') return !t.completada;
+    if (filtroActual === 'completadas') return t.completada;
+    return true;
+  });
+
+  lista.innerHTML = tareasFiltradas.map(t => `
+    <li class="${t.completada ? 'completada' : ''}">
+      <input type="checkbox" ${t.completada ? 'checked' : ''} onclick="alternarEstado(${t.id})">
+      <span><strong>${t.titulo}</strong> (${t.curso}) - Entrega: ${t.fechaEntrega}</span>
+      <button onclick="eliminarTarea(${t.id})">Eliminar</button>
+    </li>
+  `).join('');
+}
