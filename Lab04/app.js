@@ -73,3 +73,11 @@ function eliminarTarea(id) {
   guardarYRenderizar();
 }
 
+function cambiarFiltro(filtro) {
+  filtroActual = filtro;
+  renderizar();
+}
+
+
+
+document.addEventListener('DOMContentLoaded', renderizar);
