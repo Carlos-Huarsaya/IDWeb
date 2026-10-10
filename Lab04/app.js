@@ -27,7 +27,7 @@ form.addEventListener('submit', (e) => {
   }
 
   const nuevaTarea = {
-    id: Math.random().toString(36).substring(2, 9),
+    id: Date.now(),
     titulo,
     curso,
     fechaEntrega,
@@ -63,13 +63,13 @@ function guardarYRenderizar() {
 }
 
 function alternarEstado(id) {
-  const tarea = tareas.find(t => t.id === id);
+  const tarea = tareas.find(t => t.id === Number(id));
   if (tarea) tarea.completada = !tarea.completada;
   guardarYRenderizar();
 }
 
 function eliminarTarea(id) {
-  tareas = tareas.filter(t => t.id !== id);
+  tareas = tareas.filter(t => t.id !== Number(id));
   guardarYRenderizar();
 }
 
@@ -77,7 +77,5 @@ function cambiarFiltro(filtro) {
   filtroActual = filtro;
   renderizar();
 }
-
-
 
 document.addEventListener('DOMContentLoaded', renderizar);
