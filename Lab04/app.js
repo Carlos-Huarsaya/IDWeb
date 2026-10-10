@@ -63,3 +63,8 @@ function alternarEstado(id) {
   guardarYRenderizar();
 }
 
+function eliminarTarea(id) {
+  tareas = tareas.filter(t => t.id !== id);
+  guardarYRenderizar();
+}
+
