@@ -57,6 +57,11 @@ function renderizar() {
   `).join('');
 }
 
+function guardarYRenderizar() {
+  localStorage.setItem('tareas_edu', JSON.stringify(tareas));
+  renderizar();
+}
+
 function alternarEstado(id) {
   const tarea = tareas.find(t => t.id === id);
   if (tarea) tarea.completada = !tarea.completada;
