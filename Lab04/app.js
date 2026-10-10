@@ -56,3 +56,10 @@ function renderizar() {
     </li>
   `).join('');
 }
+
+function alternarEstado(id) {
+  const tarea = tareas.find(t => t.id === id);
+  if (tarea) tarea.completada = !tarea.completada;
+  guardarYRenderizar();
+}
+
