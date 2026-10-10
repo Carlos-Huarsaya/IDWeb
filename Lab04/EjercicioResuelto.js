@@ -37,3 +37,4 @@ function deleteTask(index) {
 }
 
 document.addEventListener('DOMContentLoaded', renderTasks);
+
