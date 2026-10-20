@@ -31,3 +31,53 @@ const server = http.createServer((req, res) => {
     return;
   }
 
+
+  if (url === '/api/estudiantes' && method === 'POST') {
+    let body = '';
+
+
+    req.on('data', (chunk) => {
+      body += chunk.toString();
+    });
+
+    req.on('end', () => {
+      try {
+        const nuevoEstudiante = JSON.parse(body);
+
+        fs.readFile(DATA_FILE, 'utf8', (err, data) => {
+          let estudiantes = [];
+
+          if (!err && data) {
+            try {
+              estudiantes = JSON.parse(data);
+            } catch (parseErr) {
+              estudiantes = [];
+            }
+          }
+
+   
+          if (!nuevoEstudiante.id) {
+            nuevoEstudiante.id = Date.now();
+          }
+
+          estudiantes.push(nuevoEstudiante);
+
+          
+          fs.writeFile(DATA_FILE, JSON.stringify(estudiantes, null, 2), (writeErr) => {
+            if (writeErr) {
+              res.writeHead(500, { 'Content-Type': 'application/json; charset=utf-8' });
+              return res.end(JSON.stringify({ error: 'Error al guardar los datos' }));
+            }
+
+            res.writeHead(201, { 'Content-Type': 'application/json; charset=utf-8' });
+            res.end(JSON.stringify(nuevoEstudiante));
+          });
+        });
+      } catch (parseError) {
+        res.writeHead(400, { 'Content-Type': 'application/json; charset=utf-8' });
+        res.end(JSON.stringify({ error: 'El formato del body debe ser JSON válido' }));
+      }
+    });
+    return;
+  }
+
