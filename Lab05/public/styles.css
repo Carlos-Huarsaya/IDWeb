@@ -1,0 +1,19 @@
+body {
+font-family: system-ui, -apple-system, sans-serif;
+background-color: #f4f4f9;
+color: #333;
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+}
+
+h1 {
+background: #ffffff;
+padding: 2rem 3rem;
+border-radius: 8px;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+color: #2c3e50;
+font-size: 2rem;
+text-align: center;
+}
