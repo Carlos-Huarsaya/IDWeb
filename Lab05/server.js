@@ -16,3 +16,18 @@ const MIME_TYPES = {
   '.svg': 'image/svg+xml',
   '.ico': 'image/x-icon'
 };
+const server = http.createServer((req, res) => {
+  const { method, url } = req;
+ 
+  if (url === '/api/estudiantes' && method === 'GET') {
+    fs.readFile(DATA_FILE, 'utf8', (err, data) => {
+      if (err) {
+        res.writeHead(500, { 'Content-Type': 'application/json; charset=utf-8' });
+        return res.end(JSON.stringify({ error: 'Error interno al leer los datos' }));
+      }
+      res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
+      res.end(data || '[]');
+    });
+    return;
+  }
+
