@@ -81,3 +81,9 @@ const server = http.createServer((req, res) => {
     return;
   }
 
+
+  if (url.startsWith('/api/')) {
+    res.writeHead(404, { 'Content-Type': 'application/json; charset=utf-8' });
+    return res.end(JSON.stringify({ error: 'Ruta de la API no encontrada' }));
+  }
+
