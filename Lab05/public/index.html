@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Gestión de Estudiantes</title>
+</head>
+<body>
+  <main>
+    <h1>Gestión de Estudiantes</h1>
+
+    <!-- Formulario para POST /api/estudiantes -->
+    <form id="formEstudiante" style="margin-top: 1rem; display: flex; gap: 0.5rem;">
+      <input type="text" id="nombre" placeholder="Nombre del estudiante" required style="padding: 0.5rem; flex: 1;">
+      <button type="submit" style="padding: 0.5rem 1rem; cursor: pointer;">Agregar</button>
+    </form>
+
+    <!-- Visualización para GET /api/estudiantes -->
+    <section style="margin-top: 1.5rem;">
+      <h2 style="font-size: 1.2rem; color: #2c3e50;">Lista Registrada</h2>
+      <pre id="resultado" style="background: #f8f9fa; padding: 1rem; border-radius: 4px; overflow-x: auto; max-height: 200px;"></pre>
+    </section>
+  </main>
+
+  <script>
+    const API = '/api/estudiantes';
+
+    // Consumir GET /api/estudiantes
+    async function cargarEstudiantes() {
+      try {
+        const res = await fetch(API);
+        const data = await res.json();
+        document.getElementById('resultado').textContent = JSON.stringify(data, null, 2);
+      } catch (err) {
+        console.error('Error al obtener datos:', err);
+      }
+    }
+
+    // Consumir POST /api/estudiantes
+    document.getElementById('formEstudiante').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const nombre = document.getElementById('nombre').value;
+
+      try {
+        await fetch(API, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ nombre })
+        });
+
+        document.getElementById('nombre').value = '';
+        cargarEstudiantes();
+      } catch (err) {
+        console.error('Error al guardar:', err);
+      }
+    });
+
+    cargarEstudiantes();
+  </script>
+</body>
+</html>
