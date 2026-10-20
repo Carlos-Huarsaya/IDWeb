@@ -21,6 +21,20 @@
     </section>
   </main>
 
+  <script>
+    const API = '/api/estudiantes';
 
+    // Consumir GET /api/estudiantes
+    async function cargarEstudiantes() {
+      try {
+        const res = await fetch(API);
+        const data = await res.json();
+        document.getElementById('resultado').textContent = JSON.stringify(data, null, 2);
+      } catch (err) {
+        console.error('Error al obtener datos:', err);
+      }
+    }
+
+  </script>
 </body>
 </html>
