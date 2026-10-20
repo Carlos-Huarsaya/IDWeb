@@ -24,7 +24,6 @@
   <script>
     const API = '/api/estudiantes';
 
-    // Consumir GET /api/estudiantes
     async function cargarEstudiantes() {
       try {
         const res = await fetch(API);
@@ -35,6 +34,25 @@
       }
     }
 
+    document.getElementById('formEstudiante').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const nombre = document.getElementById('nombre').value;
+
+      try {
+        await fetch(API, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ nombre })
+        });
+
+        document.getElementById('nombre').value = '';
+        cargarEstudiantes();
+      } catch (err) {
+        console.error('Error al guardar:', err);
+      }
+    });
+
+    cargarEstudiantes();
   </script>
 </body>
 </html>
