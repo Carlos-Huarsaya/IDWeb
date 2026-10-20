@@ -87,3 +87,10 @@ const server = http.createServer((req, res) => {
     return res.end(JSON.stringify({ error: 'Ruta de la API no encontrada' }));
   }
 
+  const relativePath = url === '/' ? 'index.html' : url;
+  const filePath = path.join(PUBLIC_DIR, relativePath);
+
+  if (!filePath.startsWith(PUBLIC_DIR)) {
+    res.writeHead(403, { 'Content-Type': 'application/json; charset=utf-8' });
+    return res.end(JSON.stringify({ error: 'Acceso denegado' }));
+  }
