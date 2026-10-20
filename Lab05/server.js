@@ -113,3 +113,7 @@ const server = http.createServer((req, res) => {
     }
   });
 });
+
+server.listen(PORT, () => {
+  console.log(`Servidor HTTP nativo escuchando en http://localhost:${PORT}`);
+});
